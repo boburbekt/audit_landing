@@ -1,6 +1,6 @@
 <template>
   <div class="font-sans text-gray-800">
-    <!-- <Header /> -->
+    <Header />
 
     <section id="hero" class="h-screen flex items-center justify-center bg-blue-50">
       <div class="text-center">
@@ -61,5 +61,5 @@
 </template>
 
 <script >
-// import Header from "./header.vue"
+import Header from './components/header.vue'
 </script>
