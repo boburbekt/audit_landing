@@ -62,4 +62,6 @@
 
 <script >
 import Header from './components/header.vue'
+//  AOS.init();
+
 </script>
