@@ -4,9 +4,10 @@
       'bg-white/90 backdrop-blur-lg sticky top-0 z-50 transition-all duration-500',
       isScrolled ? 'shadow-2xl shadow-gray-200/50 border-b border-gray-100' : 'shadow-lg shadow-gray-100/50'
     ]"
+   
   >
   
-  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 py-4 lg:py-5">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-8 py-4 lg:py-5"  data-aos="fade-down"  >
     <!-- Logo with modern styling -->
     <NuxtLink 
       to="/" 
@@ -17,30 +18,72 @@
 
     <!-- Modern Desktop Navigation -->
     <div class="flex items-center space-x-8 lg:space-x-12">
-      <a 
-        href="#hero" 
-        class="text-gray-700 hover:text-green-600 font-semibold text-lg transition-all duration-400 relative group px-3 py-2 rounded-lg hover:bg-green-50/80"
-      >
-        Asosiy
-        <!-- Modern animated underline with gradient - starts from text beginning -->
-        <span class="absolute -bottom-1 left-3 w-0 h-1 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 transition-all duration-400 ease-out group-hover:w-[calc(100%-1.5rem)] rounded-full"></span>
-        <!-- Glow effect -->
-        <span class="absolute -bottom-1 left-3 w-0 h-1 bg-green-400 blur-md opacity-0 transition-all duration-400 ease-out group-hover:w-[calc(100%-1.5rem)] group-hover:opacity-70"></span>
-        <!-- Floating dots animation -->
-        <span class="absolute -top-1 left-1/2 w-1 h-1 bg-green-400 rounded-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:-translate-y-2 group-hover:animate-bounce"></span>
-      </a>
+     <a 
+      href="#hero"
+      @click="setActive('hero')"
+      :class="[
+        'text-gray-700 hover:text-green-600 font-semibold text-lg transition-all duration-400 relative group px-3 py-2 rounded-lg hover:bg-green-50/80',
+        activeSection === 'hero' ? 'text-green-600 bg-green-50/80' : ''
+      ]"
+>
+  Asosiy
+
+  <!-- underline -->
+  <span
+    :class="[
+      'absolute -bottom-1 left-3 w-0 h-1 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 transition-all duration-400 ease-out rounded-full',
+      activeSection === 'hero' ? 'w-[calc(100%-1.5rem)]' : '',
+      'group-hover:w-[calc(100%-1.5rem)]'
+    ]"
+  ></span>
+
+  <!-- glow -->
+  <span
+    :class="[
+      'absolute -bottom-1 left-3 w-0 h-1 bg-green-400 blur-md opacity-0 transition-all duration-400 ease-out',
+      activeSection === 'hero' ? 'w-[calc(100%-1.5rem)] opacity-70' : '',
+      'group-hover:w-[calc(100%-1.5rem)] group-hover:opacity-70'
+    ]"
+  ></span>
+
+  <!-- dot -->
+  <span
+    :class="[
+      'absolute -top-1 left-1/2 w-1 h-1 bg-green-400 rounded-full opacity-0 transition-all duration-500',
+      activeSection === 'hero' ? 'opacity-100 -translate-y-2' : '',
+      'group-hover:opacity-100 group-hover:-translate-y-2 group-hover:animate-bounce'
+    ]"
+  ></span>
+</a>
+
       
       <a 
         href="#xizmatlar" 
-        class="text-gray-700 hover:text-green-600 font-semibold text-lg transition-all duration-400 relative group px-3 py-2 rounded-lg hover:bg-green-50/80"
+       @click="setActive('xizmatlar')"
+  :class="[
+    'text-gray-700 hover:text-green-600 font-semibold text-lg transition-all duration-400 relative group px-3 py-2 rounded-lg hover:bg-green-50/80',
+    activeSection === 'xizmatlar' ? 'text-green-600 bg-green-50/80' : ''
+  ]"
       >
         Xizmatlar
         <!-- Modern animated underline with gradient - starts from text beginning -->
-        <span class="absolute -bottom-1 left-3 w-0 h-1 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 transition-all duration-400 ease-out group-hover:w-[calc(100%-1.5rem)] rounded-full"></span>
+        <span  :class="[
+      'absolute -bottom-1 left-3 w-0 h-1 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 transition-all duration-400 ease-out rounded-full',
+      activeSection === 'xizmatlar' ? 'w-[calc(100%-1.5rem)]' : '',
+      'group-hover:w-[calc(100%-1.5rem)]'
+    ]"></span>
         <!-- Glow effect -->
-        <span class="absolute -bottom-1 left-3 w-0 h-1 bg-green-400 blur-md opacity-0 transition-all duration-400 ease-out group-hover:w-[calc(100%-1.5rem)] group-hover:opacity-70"></span>
+        <span  :class="[
+      'absolute -bottom-1 left-3 w-0 h-1 bg-green-400 blur-md opacity-0 transition-all duration-400 ease-out',
+      activeSection === 'xizmatlar' ? 'w-[calc(100%-1.5rem)] opacity-70' : '',
+      'group-hover:w-[calc(100%-1.5rem)] group-hover:opacity-70'
+    ]"></span>
         <!-- Floating dots animation -->
-        <span class="absolute -top-1 left-1/2 w-1 h-1 bg-green-400 rounded-full opacity-0 transition-all duration-500 group-hover:opacity-100 group-hover:-translate-y-2 group-hover:animate-bounce delay-75"></span>
+        <span :class="[
+      'absolute -top-1 left-1/2 w-1 h-1 bg-green-400 rounded-full opacity-0 transition-all duration-500',
+      activeSection === 'xizmatlar' ? 'opacity-100 -translate-y-2' : '',
+      'group-hover:opacity-100 group-hover:-translate-y-2 group-hover:animate-bounce'
+    ]"></span>
       </a>
       
       <a 
@@ -108,4 +151,33 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
 })
+
+const activeSection = ref('')
+
+const onScroll = () => {
+  const sections = document.querySelectorAll('section[id]')
+  const scrollY = window.scrollY + 100
+
+  sections.forEach(section => {
+    const top = section.offsetTop
+    const height = section.offsetHeight
+    const id = section.getAttribute('id')
+
+    if (scrollY >= top && scrollY < top + height) {
+      activeSection.value = id
+    }
+  })
+}
+
+onMounted(() => {
+  window.addEventListener('scroll', onScroll)
+})
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', onScroll)
+})
+const setActive = (id) => {
+  activeSection.value = id
+}
+
 </script>

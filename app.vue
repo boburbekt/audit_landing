@@ -1,5 +1,6 @@
 <template>
-  <div class="font-sans text-gray-800">
+  <div class="font-sans text-gray-800 scroll-smooth" >
+    
     <Header />
 
     <!-- Zamonaviy Hero Section -->
@@ -19,7 +20,7 @@
         <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           
           <!-- Chap tomon - Matn va button -->
-          <div class="space-y-8 lg:space-y-10">
+          <div class="space-y-8 lg:space-y-10" data-aos="fade-up-right">
             <!-- Main heading with gradient -->
             <div class="space-y-6">
               <h1 class="text-4xl md:text-5xl lg:text-5xl font-bold leading-tight">
@@ -45,7 +46,7 @@
             <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center">
               <a 
                 href="tel:+998781138806" 
-                class="group relative bg-gradient-to-r from-green-600 via-green-700 to-emerald-800 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:from-green-500 hover:via-green-600 hover:to-emerald-700 hover:scale-105 hover:rotate-1 shadow-2xl hover:shadow-3xl hover:shadow-green-500/30 overflow-hidden flex items-center space-x-3 "
+                class="group relative bg-gradient-to-r from-green-600 via-green-700 to-emerald-800 text-white px-8 py-4 rounded-2xl font-bold text-lg transition-all duration-500 hover:from-green-500 hover:via-green-600 hover:to-emerald-700 hover:scale-105 shadow-2xl hover:shadow-3xl hover:shadow-green-500/30 overflow-hidden flex items-center space-x-3 "
               >
                 <!-- Animated background overlay -->
                 <span class="absolute inset-0 bg-gradient-to-r from-emerald-400 to-green-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
@@ -87,7 +88,7 @@
           </div>
 
           <!-- O'ng tomon - Rasm va animatsiya -->
-          <div class="relative lg:h-96">
+          <div class="relative lg:h-96" data-aos="fade-up-left">
             <div class="relative w-full h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-700 group">
               
               <!-- Zamonaviy korxona avtomatlashtirish rasmi -->
