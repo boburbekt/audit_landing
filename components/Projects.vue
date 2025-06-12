@@ -1,3 +1,11 @@
+<script>
+import TestimonialsSection from './ClientFdb.vue';
+export default {
+  components: {
+    TestimonialsSection
+  }
+};
+</script>
 <template>
   <!-- Biz haqimizda bo'limi -->
   <section id="loyihalar" class="py-20 bg-gradient-to-br from-slate-50 via-white to-green-50/30 relative overflow-hidden">
@@ -158,183 +166,10 @@
           </div>
         </div>
       </div>
-  </section>
+      <TestimonialsSection />
 
-  <!-- Loyihalar bo'limi -->
-  <section id="loyihalar" class="py-20 bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden">
-    <!-- Background decorative elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute top-40 left-10 w-24 h-24 bg-gradient-to-r from-blue-400/10 to-green-400/10 rounded-full blur-2xl animate-pulse"></div>
-      <div class="absolute bottom-40 right-10 w-32 h-32 bg-gradient-to-r from-green-400/10 to-emerald-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-      <!-- Section Header -->
-      <div class="text-center mb-16" data-aos="fade-up">
-        <h2 class="text-4xl lg:text-5xl font-bold mb-6">
-          <span class="bg-gradient-to-r from-blue-600 via-purple-500 to-green-600 bg-clip-text text-transparent">
-            Loyihalarimiz
-          </span>
-        </h2>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Mijozlarimiz uchun yaratgan muvaffaqiyatli raqamli yechimlarimiz
-        </p>
-      </div>
-
-      <!-- Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-        
-        <!-- E-commerce platformasi -->
-        <div class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 border border-gray-100 hover:border-blue-200" data-aos="fade-up" data-aos-delay="100">
-          <!-- Project image/mockup -->
-          <div class="relative h-48 bg-gradient-to-br from-blue-500 via-purple-600 to-blue-700 overflow-hidden">
-            <!-- E-commerce mockup -->
-            <div class="absolute inset-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex space-x-1">
-                  <div class="w-2 h-2 bg-red-400 rounded-full"></div>
-                  <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                </div>
-                <div class="text-xs text-gray-500">Online Market</div>
-              </div>
-              <div class="grid grid-cols-3 gap-2 mb-3">
-                <div class="h-12 bg-gradient-to-r from-blue-100 to-purple-100 rounded border"></div>
-                <div class="h-12 bg-gradient-to-r from-green-100 to-blue-100 rounded border"></div>
-                <div class="h-12 bg-gradient-to-r from-purple-100 to-pink-100 rounded border"></div>
-              </div>
-              <div class="space-y-1">
-                <div class="h-2 bg-gray-200 rounded w-full"></div>
-                <div class="h-2 bg-gray-200 rounded w-3/4"></div>
-              </div>
-            </div>
-            <div class="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
-          </div>
-          
-          <!-- Content -->
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-              E-commerce platformasi
-            </h3>
-            <p class="text-gray-600 mb-4 leading-relaxed">
-              To'liq funksional online savdo platformasi - mahsulot katalogi, to'lov tizimi va admin paneli bilan.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">React</span>
-              <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">Node.js</span>
-              <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm font-medium">MongoDB</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center space-x-2">
-                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span class="text-sm text-gray-500">Faol ishlamoqda</span>
-              </div>
-              <button class="text-blue-600 hover:text-blue-700 font-medium text-sm group-hover:translate-x-1 transition-transform duration-300">
-                Batafsil →
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- CRM tizimi -->
-        <div class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 border border-gray-100 hover:border-green-200" data-aos="fade-up" data-aos-delay="200">
-          <!-- Project image/mockup -->
-          <div class="relative h-48 bg-gradient-to-br from-green-500 via-emerald-600 to-green-700 overflow-hidden">
-            <!-- CRM mockup -->
-            <div class="absolute inset-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex space-x-1">
-                  <div class="w-2 h-2 bg-red-400 rounded-full"></div>
-                  <div class="w-2 h-2 bg-yellow-400 rounded-full"></div>
-                  <div class="w-2 h-2 bg-green-400 rounded-full"></div>
-                </div>
-                <div class="text-xs text-gray-500">CRM Dashboard</div>
-              </div>
-              <div class="grid grid-cols-2 gap-2 mb-3">
-                <div class="bg-green-50 p-2 rounded border">
-                  <div class="text-xs text-green-600 font-semibold">Mijozlar</div>
-                  <div class="text-lg font-bold text-green-700">1,234</div>
-                </div>
-                <div class="bg-blue-50 p-2 rounded border">
-                  <div class="text-xs text-blue-600 font-semibold">Savdo</div>
-                  <div class="text-lg font-bold text-blue-700">+24%</div>
-                </div>
-              </div>
-              <div class="flex justify-between items-end h-8">
-                <div class="w-3 h-4 bg-green-400 rounded-t"></div>
-                <div class="w-3 h-6 bg-blue-400 rounded-t"></div>
-                <div class="w-3 h-8 bg-emerald-400 rounded-t"></div>
-                <div class="w-3 h-5 bg-green-400 rounded-t"></div>
-                <div class="w-3 h-7 bg-blue-400 rounded-t"></div>
-              </div>
-            </div>
-            <div class="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-green-400/20 to-emerald-500/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
-          </div>
-          
-          <!-- Content -->
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-gray-800 mb-3 group-hover:text-green-600 transition-colors duration-300">
-              CRM tizimi
-            </h3>
-            <p class="text-gray-600 mb-4 leading-relaxed">
-              Mijozlar bilan ishlashni boshqarish tizimi - avtomatik hisobotlar va analytics bilan.
-            </p>
-            <div class="flex flex-wrap gap-2 mb-4">
-              <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm font-medium">Vue.js</span>
-              <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">Laravel</span>
-              <span class="px-3 py-1 bg-orange-100 text-orange-600 rounded-full text-sm font-medium">MySQL</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <div class="flex items-center space-x-2">
-                <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                <span class="text-sm text-gray-500">Faol ishlamoqda</span>
-              </div>
-              <button class="text-green-600 hover:text-green-700 font-medium text-sm group-hover:translate-x-1 transition-transform duration-300">
-                Batafsil →
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobil ilova -->
-        <div class="group relative bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-700 hover:-translate-y-4 border border-gray-100 hover:border-purple-200" data-aos="fade-up" data-aos-delay="300">
-          <!-- Project image/mockup -->
-          <div class="relative h-48 bg-gradient-to-br from-purple-500 via-pink-600 to-purple-700 overflow-hidden">
-            <!-- Mobile app mockup -->
-            <div class="absolute inset-6 bg-white/95 backdrop-blur-sm rounded-2xl p-4 shadow-lg">
-              <div class="flex items-center justify-between mb-3">
-                <div class="text-xs text-gray-500 font-medium">Mobile App</div>
-                <div class="flex space-x-1">
-                  <div class="w-1 h-1 bg-gray-400 rounded-full"></div>
-                  <div class="w-4 h-1 bg-gray-400 rounded-full"></div>
-                  <div class="w-1 h-1 bg-gray-400 rounded-full"></div>
-                </div>
-              </div>
-              <div class="space-y-3">
-                <div class="flex items-center space-x-3">
-                  <div class="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full"></div>
-                  <div class="flex-1">
-                    <div class="h-2 bg-gray-200 rounded w-full mb-1"></div>
-                    <div class="h-2 bg-gray-200 rounded w-2/3"></div>
-                  </div>
-                </div>
-                <div class="flex items-center space-x-3">
-                  <div class="w-8 h-8 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full"></div>
-                  <div class="flex-1">
-                    <div class="h-2 bg-gray-200 rounded w-full mb-1"></div>
-                    <div class="h-2 bg-gray-200 rounded w-3/4"></div>
-                  </div>
-                </div>
-                <div class="grid grid-cols-2 gap-2 mt-4">
-                  <div class="h-8 bg-gradient-to-r from-purple-100 to-pink-100 rounded"></div>
-                  <div class="h-8 bg-gradient-to-r from-blue-100 to-purple-100 rounded"></div>
-                </div>
-              </div>
-            </div>
-            <div class="absolute -top-4 -right-4 w-16 h-16 bg-gradient-to-r from-purple-400/20 to-pink-500/20 rounded-full blur-xl group-hover:scale-150 transition-transform duration-1000"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  </section> 
 </template>
+ <style scoped>
+
+  </style>
