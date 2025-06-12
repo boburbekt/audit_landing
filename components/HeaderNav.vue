@@ -174,10 +174,47 @@
         ></span>
       </a>
       
-      <!-- Premium CTA Button (Aloqa) -->
+        <!-- To'lovlar menyu -->
       <a 
         href="#aloqa" 
         @click="setActive('aloqa')"
+        :class="[
+          'text-gray-700 hover:text-green-600 font-semibold text-lg transition-all duration-400 relative group px-3 py-2 rounded-lg hover:bg-green-50/80',
+          activeSection === 'aloqa' ? 'text-green-600 bg-green-50/80' : ''
+        ]"
+      >
+        Aloqa
+        
+        <!-- underline -->
+        <span 
+          :class="[
+            'absolute -bottom-1 left-3 w-0 h-1 bg-gradient-to-r from-green-400 via-emerald-500 to-green-600 transition-all duration-400 ease-out rounded-full',
+            activeSection === 'aloqa' ? 'w-[calc(100%-1.5rem)]' : '',
+            'group-hover:w-[calc(100%-1.5rem)]'
+          ]"
+        ></span>
+        
+        <!-- glow -->
+        <span 
+          :class="[
+            'absolute -bottom-1 left-3 w-0 h-1 bg-green-400 blur-md opacity-0 transition-all duration-400 ease-out',
+            activeSection === 'aloqa' ? 'w-[calc(100%-1.5rem)] opacity-70' : '',
+            'group-hover:w-[calc(100%-1.5rem)] group-hover:opacity-70'
+          ]"
+        ></span>
+        
+        <!-- dot -->
+        <span 
+          :class="[
+            'absolute -top-1 left-1/2 w-1 h-1 bg-green-400 rounded-full opacity-0 transition-all duration-500',
+            activeSection === 'aloqa' ? 'opacity-100 -translate-y-2' : '',
+            'group-hover:opacity-100 group-hover:-translate-y-2 group-hover:animate-bounce delay-200'
+          ]"
+        ></span>
+      </a>
+      <!-- Premium CTA Button (Aloqa) -->
+      <div 
+        href="" 
         :class="[
           'relative group bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 text-white px-6 py-3 rounded-xl font-semibold text-lg transition-all duration-500 hover:from-green-500 hover:via-green-600 hover:to-emerald-700 hover:scale-110 hover:rotate-1 shadow-lg hover:shadow-2xl hover:shadow-green-500/25 overflow-hidden',
           activeSection === 'aloqa' ? 'from-green-500 via-green-600 to-emerald-700 scale-105 shadow-2xl shadow-green-500/25' : ''
@@ -196,12 +233,12 @@
         
         <!-- Button text -->
         <span class="relative z-10 flex items-center space-x-2">
-          <span>Aloqa</span>
+          <span>Kirish</span>
           <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </span>
-      </a>
+      </div>
     </div>
   </nav>
 
