@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 bg-gray-100">
+  <section class="py-16 bg-gray-100" id="tolovlar">
     <div class="max-w-4xl mx-auto text-center mb-12">
       <h4 class="text-3xl font-semibold text-gray-800 mb-4">
         Bizda eng yaxshi oldindan buyurtma narxlari!
