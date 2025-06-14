@@ -18,6 +18,7 @@ import ProjectSct from './components/Projects.vue'
 import PaymentsSct from './components/PaymentsSct.vue'
 import ContactSct from './components/Contact.vue'
 import Footer from './components/FooterB.vue'
+import Login from './components/Login.vue'
 
 export default {
   components: {
@@ -30,6 +31,12 @@ export default {
     Footer
   }
 }
+useHead({
+  title: 'aud-it soft',
+  meta: [
+    { name: 'description', content: 'BIznesni raqamlashtirish dasturi' }
+  ]
+})
 </script>
 
 <!-- <script>

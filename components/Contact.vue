@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-50 py-16" id="aloqa">
+  <section class="bg-gray-50 py-16" id="aloqa">
     <div class="container mx-auto px-4">
       <!-- Section Header -->
       <div class="flex justify-center mb-12">
@@ -48,7 +48,7 @@
            <!-- Social Links - First Row -->
            <div class="col-span-2 ">
              <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-left" data-aos-duration="1000">
-               <h4 class="text-xl font-semibold text-gray-800 mb-6">Useful Links</h4>
+               <h4 class="text-xl font-semibold text-gray-800 mb-6">Ijtimoiy tarmoq</h4>
                <div class="grid grid-cols-2 gap-3">
                  <a href="#" class="flex items-center text-gray-600 hover:text-teal-600 transition-all duration-300 group p-2 rounded-lg hover:bg-teal-50">
                    <svg class="w-5 h-5 mr-3 group-hover:scale-110 transition-transform duration-300 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
@@ -85,6 +85,7 @@
       <div class="w-[50%]">
         <div class="max-w-4xl mx-auto">
           <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-duration="1200">
+            <h4 class="text-xl font-semibold text-gray-800 mb-6 text-center">Bog'lanish</h4>
             <form @submit.prevent="submitForm" class="space-y-6">
               <!-- Name and Email Row -->
               <div class="grid md:grid-cols-2 gap-4">
@@ -162,7 +163,7 @@
 
     
     </div>
-  </div>
+  </section>
 </template>
 
 <script setup>
