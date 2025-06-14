@@ -9,13 +9,13 @@
         <button class="absolute top-2 right-2 text-black text-xl" @click="closeModal" v-if="false">
           
         </button>
-        <div class="p-4 border-b">
+        <div class="p-4 border-b" v-if="false">
           <slot name="header" />
         </div>
-        <div class="">
+        <div class="p-4">
           <slot name="body" />
         </div>
-        <div class="p-4 border-t text-right">
+        <div class="p-4 border-t text-right" v-if="fasle">
           <slot name="footer" />
         </div>
       </div>

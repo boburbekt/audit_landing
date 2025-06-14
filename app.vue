@@ -1,11 +1,8 @@
 <template>
   <div class="font-sans text-gray-800 scroll-smooth">
     <Header />
-    <HeroSct />
-    <ServiceSct />
-    <ProjectSct />
-    <PaymentsSct />
-    <ContactSct />
+     <router-view />
+   
     <Footer />
   </div>
 </template>
@@ -18,7 +15,6 @@ import ProjectSct from './components/Projects.vue'
 import PaymentsSct from './components/PaymentsSct.vue'
 import ContactSct from './components/Contact.vue'
 import Footer from './components/FooterB.vue'
-import Login from './components/Login.vue'
 
 export default {
   components: {

@@ -113,11 +113,12 @@
 
     <!-- CTA Button -->
     <div class="mt-auto relative z-10">
-      <button
+      <NuxtLink
+        :to="getDetailRoute()"
         :class="[
           'block w-full text-center px-6 py-4 rounded-xl font-semibold text-lg',
           'border-2 transition-all duration-300 transform relative overflow-hidden',
-          'hover:scale-105 active:scale-95 group/btn',
+          'hover:scale-105 active:scale-95 group/btn no-underline',
           highlight
             ? 'border-white text-white hover:bg-white hover:text-emerald-600 hover:shadow-lg'
             : 'border-emerald-500 text-emerald-600 hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/30'
@@ -139,7 +140,7 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </span>
-      </button>
+      </NuxtLink>
     </div>
 
     <!-- Decorative Elements -->
@@ -163,7 +164,7 @@
 <script setup>
 import { ref } from 'vue'
 
-defineProps({
+const props = defineProps({
   title: String,
   price: String,
   icon: String,
@@ -172,6 +173,14 @@ defineProps({
 })
 
 const isHovered = ref(false)
+
+// Route generation based on title
+const getDetailRoute = () => {
+  const slug = props.title.toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
+  return `/products?type=${slug}`
+}
 </script>
 
 <style scoped>
@@ -204,5 +213,10 @@ const isHovered = ref(false)
 * {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+}
+
+/* Remove default link underline */
+.no-underline {
+  text-decoration: none;
 }
 </style>

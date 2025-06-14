@@ -243,72 +243,59 @@
      <Modal ref="modal"  size="md" @open="handleOpen" @close="handleClose">
     
       <template #body>
-<div class="min-h-screen relative overflow-hidden flex items-center justify-center h-[500px]">
-    <!-- Background Shapes -->
-    <div class="absolute inset-0">
-      <!-- Blue gradient shape -->
-      <div class="absolute w-64 h-64 rounded-full bg-gradient-to-br from-blue-600 to-blue-400 opacity-80 -top-20 -left-20 "></div>
-      <!-- Orange gradient shape -->
-      <div class="absolute w-64 h-64 rounded-full bg-gradient-to-br from-green-700 to-green-400 opacity-80 -bottom-20 -right-8"></div>
-    </div>
+   <form 
+      @submit.prevent="handleSubmit"
+      class="backdrop-blur-lg rounded-xl border border-green-700 shadow-2xl p-8 space-y-6 backdrop-blur-custom"
+    >
+      <!-- Title -->
+      <h3 class="text-2xl font-medium text-black tracking-wide">
+          Kirish uchun formani to'ldiring!
+        </h3>
+      <!-- Username Field -->
+      <div class="space-y-2">
+        <label 
+          for="username" 
+          class="block text-black font-medium text-base tracking-wide"
+        >
+          Login
+        </label>
+        <input
+          type="text"
+          id="username"
+          v-model="username"
+          placeholder="Login"
+          class="w-full h-12 bg-gray/5 rounded border focus:border-green-600 outline-none px-3 text-black placeholder-gray-300 text-sm font-light focus:bg-gray/10 transition-all duration-200"
+        />
+      </div>
 
-    <!-- Login Form -->
-    <div class="relative z-10 w-full max-w-md mx-4 ">
-      <form 
-        @submit.prevent="handleSubmit"
-        class="backdrop-blur-lg rounded-xl border border-green-700 shadow-2xl p-8 space-y-6 backdrop-blur-custom"
-      >
-        <!-- Title -->
-        <h3 class="text-2xl font-medium text-black tracking-wide">
-            Kirish uchun formani to'ldiring!
-          </h3>
-        <!-- Username Field -->
-        <div class="space-y-2">
-          <label 
-            for="username" 
-            class="block text-black font-medium text-base tracking-wide"
-          >
-            Login
-          </label>
-          <input
-            type="text"
-            id="username"
-            v-model="username"
-            placeholder="Login"
-            class="w-full h-12 bg-gray/5 rounded border focus:border-green-600 outline-none px-3 text-black placeholder-gray-300 text-sm font-light focus:bg-gray/10 transition-all duration-200"
-          />
-        </div>
+      <!-- Password Field -->
+      <div class="space-y-2">
+        <label 
+          for="password" 
+          class="block text-black font-medium text-base tracking-wide"
+        >
+          Parol
+        </label>
+        <input
+          type="password"
+          id="password"
+          v-model="password"
+          placeholder="Parol"
+          class="w-full h-12 bg-gray/5 rounded border focus:border-green-600 outline-none px-3 text-black placeholder-gray-300 text-sm font-light focus:bg-gray/10 transition-all duration-200"
+        />
+      </div>
 
-        <!-- Password Field -->
-        <div class="space-y-2">
-          <label 
-            for="password" 
-            class="block text-black font-medium text-base tracking-wide"
-          >
-            Parol
-          </label>
-          <input
-            type="password"
-            id="password"
-            v-model="password"
-            placeholder="Parol"
-            class="w-full h-12 bg-gray/5 rounded border focus:border-green-600 outline-none px-3 text-black placeholder-gray-300 text-sm font-light focus:bg-gray/10 transition-all duration-200"
-          />
-        </div>
-
-        <!-- Login Button -->
-        <div class="pt-6">
-          <button
-            type="submit"
-            class="w-full bg-white text-gray-900 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 hover:text-white transition-colors duration-300 cursor-pointer outline-none border border-green-700"
-            
-          >
-            Kirish
-          </button>
-        </div>
-      </form>
-    </div>
-  </div>
+      <!-- Login Button -->
+      <div class="pt-6">
+        <button
+          type="submit"
+          class="w-full bg-white text-gray-900 py-4 rounded-lg font-semibold text-lg hover:bg-green-700 hover:text-white transition-colors duration-300 cursor-pointer outline-none border border-green-700"
+          
+        >
+          Kirish
+        </button>
+      </div>
+    </form>
       </template>
     
     </Modal>
