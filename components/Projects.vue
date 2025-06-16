@@ -38,7 +38,7 @@ export default {
   </div>
 
   <!-- Grid  -->
-  <div class="grid grid-cols-2 gap-6">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
     <!-- Card -->
     <div class="bg-white rounded-3xl p-6 shadow-lg border border-gray-100 hover:border-green-300 transition-all group hover:-translate-y-1">
       <div class="flex items-center space-x-4 mb-2">

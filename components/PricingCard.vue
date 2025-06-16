@@ -1,9 +1,9 @@
 <template>
   <div
     :class="[
-      'w-full md:w-[320px] rounded-2xl shadow-xl p-8 flex flex-col justify-between relative overflow-hidden',
+      'w-full rounded-2xl shadow-xl p-4 sm:p-6 lg:p-8 flex flex-col justify-between relative overflow-hidden',
       'transform transition-all duration-500 ease-out hover:scale-105 hover:-translate-y-3',
-      'border-3 hover:shadow-2xl group cursor-pointer',
+      'border-3 hover:shadow-2xl group cursor-pointer min-h-[420px] sm:min-h-[450px]',
       highlight 
         ? 'bg-gradient-to-br from-emerald-500 via-green-500 to-teal-600 text-white border-emerald-400 hover:shadow-emerald-500/30' 
         : 'bg-white text-gray-800 border-emerald-400 hover:border-emerald-500 hover:shadow-emerald-500/20'
@@ -24,17 +24,17 @@
     <!-- Popular Badge -->
     <div 
       v-if="false" 
-      class="absolute -top-3 right-6 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg transform rotate-3 animate-pulse"
+      class="absolute -top-2 sm:-top-3 right-4 sm:right-6 bg-gradient-to-r from-amber-400 to-orange-500 text-white px-2 sm:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg transform rotate-3 animate-pulse"
     >
        Mashhur
     </div>
 
-    <div class="relative z-10">
+    <div class="relative z-10 flex-1 flex flex-col">
       <!-- Price Section -->
-      <div class="text-center mb-6">
+      <div class="text-center mb-4 sm:mb-6">
         <span 
           :class="[
-            'text-4xl font-bold block mb-2 transition-all duration-300 transform',
+            'text-3xl sm:text-4xl lg:text-5xl font-bold block mb-2 transition-all duration-300 transform',
             'group-hover:scale-110',
             highlight ? 'text-white' : 'text-emerald-600'
           ]"
@@ -46,7 +46,7 @@
       <!-- Title -->
       <h4 
         :class="[
-          'text-2xl font-bold mb-6 text-center transition-colors duration-300',
+          'text-lg sm:text-xl lg:text-2xl font-bold mb-4 sm:mb-6 text-center transition-colors duration-300 leading-tight',
           highlight ? 'text-white' : 'text-gray-800 group-hover:text-emerald-600'
         ]"
       >
@@ -54,10 +54,10 @@
       </h4>
 
       <!-- Icon Section -->
-      <div class="mb-8 flex justify-center">
+      <div class="mb-4 sm:mb-6 lg:mb-8 flex justify-center">
         <div 
           :class="[
-            'relative p-4 rounded-full transition-all duration-500 transform',
+            'relative p-2 sm:p-3 lg:p-4 rounded-full transition-all duration-500 transform',
             'group-hover:scale-110',
             highlight 
               ? 'bg-white/20 backdrop-blur-sm' 
@@ -65,10 +65,22 @@
           ]"
         >
           <img 
+            v-if="icon"
             :src="icon" 
             alt="Icon" 
-            class="w-16 h-16 transition-transform duration-300 group-hover:scale-110" 
+            class="w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 transition-transform duration-300 group-hover:scale-110" 
           />
+          <div 
+            v-else
+            :class="[
+              'w-10 h-10 sm:w-12 sm:h-12 lg:w-16 lg:h-16 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110',
+              highlight ? 'bg-white/30' : 'bg-emerald-200'
+            ]"
+          >
+            <svg class="w-6 h-6 sm:w-8 sm:h-8" :class="highlight ? 'text-white' : 'text-emerald-600'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
           
           <!-- Animated Ring -->
           <div 
@@ -84,13 +96,13 @@
       </div>
 
       <!-- Features List -->
-      <ul class="space-y-3 text-base mb-8">
+      <ul class="space-y-2 sm:space-y-3 text-sm sm:text-base mb-6 sm:mb-8 flex-1">
         <li 
           v-for="(feature, index) in features" 
           :key="index"
           :class="[
-            'flex items-center transition-all duration-300 transform',
-            'hover:translate-x-2 relative pl-6',
+            'flex items-start transition-all duration-300 transform',
+            'hover:translate-x-1 sm:hover:translate-x-2 relative pl-6 sm:pl-7 leading-relaxed',
             highlight ? 'text-white/90' : 'text-gray-700'
           ]"
           :style="{ 'animation-delay': `${index * 100}ms` }"
@@ -98,7 +110,7 @@
           <!-- Custom Checkmark -->
           <span 
             :class="[
-              'absolute left-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300',
+              'absolute left-0 top-0.5 w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center text-xs font-bold transition-all duration-300 flex-shrink-0',
               highlight 
                 ? 'bg-white/20 text-white' 
                 : 'bg-emerald-100 text-emerald-600 group-hover:bg-emerald-500 group-hover:text-white'
@@ -106,7 +118,7 @@
           >
             ✓
           </span>
-          {{ feature }}
+          <span class="flex-1">{{ feature }}</span>
         </li>
       </ul>
     </div>
@@ -116,9 +128,9 @@
       <NuxtLink
         :to="getDetailRoute()"
         :class="[
-          'block w-full text-center px-6 py-4 rounded-xl font-semibold text-lg',
+          'block w-full text-center px-4 sm:px-6 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg',
           'border-2 transition-all duration-300 transform relative overflow-hidden',
-          'hover:scale-105 active:scale-95 group/btn no-underline',
+          'hover:scale-105 active:scale-95 group/btn no-underline touch-manipulation',
           highlight
             ? 'border-white text-white hover:bg-white hover:text-emerald-600 hover:shadow-lg'
             : 'border-emerald-500 text-emerald-600 hover:bg-emerald-500 hover:text-white hover:shadow-lg hover:shadow-emerald-500/30'
@@ -132,7 +144,7 @@
         <span class="relative z-10 flex items-center justify-center gap-2">
           Batafsil
           <svg 
-            class="w-5 h-5 transition-transform duration-300 group-hover/btn:translate-x-1" 
+            class="w-4 h-4 sm:w-5 sm:h-5 transition-transform duration-300 group-hover/btn:translate-x-1" 
             fill="none" 
             stroke="currentColor" 
             viewBox="0 0 24 24"
@@ -146,14 +158,14 @@
     <!-- Decorative Elements -->
     <div 
       :class="[
-        'absolute top-4 left-4 w-2 h-2 rounded-full transition-all duration-500',
+        'absolute top-2 sm:top-4 left-2 sm:left-4 w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-500',
         highlight ? 'bg-white/30' : 'bg-emerald-200',
         'group-hover:scale-150 group-hover:animate-ping'
       ]"
     ></div>
     <div 
       :class="[
-        'absolute bottom-4 right-4 w-3 h-3 rounded-full transition-all duration-700',
+        'absolute bottom-2 sm:bottom-4 right-2 sm:right-4 w-2 h-2 sm:w-3 sm:h-3 rounded-full transition-all duration-700',
         highlight ? 'bg-white/20' : 'bg-emerald-100',
         'group-hover:scale-200 group-hover:animate-pulse'
       ]"
@@ -218,5 +230,21 @@ const getDetailRoute = () => {
 /* Remove default link underline */
 .no-underline {
   text-decoration: none;
+}
+
+/* Touch optimization */
+.touch-manipulation {
+  touch-action: manipulation;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 640px) {
+  .group:hover .hover\:scale-105 {
+    transform: scale(1.02);
+  }
+  
+  .group:hover .hover\:-translate-y-3 {
+    transform: translateY(-1px);
+  }
 }
 </style>

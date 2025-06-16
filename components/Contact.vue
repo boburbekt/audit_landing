@@ -14,9 +14,9 @@
         </div>
       </div>
 
-      <div class="flex align-center justify-between gap-4">
+      <div class="flex align-center flex-wrap justify-between gap-4">
         <!-- content -->
-         <div class="w-[40%]">
+         <div class="left-con w-[40%]">
            <!-- Contact Info - First Row -->
            <div class="mb-8">
              <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-right" data-aos-duration="1000">
@@ -69,7 +69,7 @@
 
          </div>
          <!-- Contact Form - Second Row -->
-      <div class="w-[50%]">
+      <div class="right-con w-[50%]">
         <div class="max-w-4xl mx-auto">
           <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-duration="1200">
             <h4 class="text-xl font-semibold text-gray-800 mb-6 text-center">Bog'lanish</h4>
@@ -196,3 +196,11 @@ const submitForm = async () => {
   }
 }
 </script>
+
+<style scoped>
+@media (max-width: 800px) {
+  .left-con, .right-con{
+    width: 100%;
+  }
+}
+</style>
