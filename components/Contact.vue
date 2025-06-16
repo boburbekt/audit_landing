@@ -62,8 +62,7 @@
            <!-- Social Links - First Row -->
            <div class="col-span-2 ">
              <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-left" data-aos-duration="1000">
-               <h4 class="text-xl font-semibold text-gray-800 mb-6"></h4>
-             
+               <Ymap/>
              </div>
            </div>
 
@@ -155,6 +154,7 @@
 
 <script setup>
 import { ref } from 'vue'
+import Ymap from './Ymap.vue'
 
 // Form reactive data
 const form = ref({

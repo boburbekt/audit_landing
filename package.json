@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-app",
+  "name": "audit-soft",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,7 +14,8 @@
     "nuxt": "^3.17.5",
     "sass": "^1.89.2",
     "vue": "^3.5.16",
-    "vue-router": "^4.5.1"
+    "vue-router": "^4.5.1",
+    "vue-yandex-maps": "^2.1.9"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^7.0.0-beta.0",
