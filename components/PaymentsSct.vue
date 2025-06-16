@@ -16,7 +16,7 @@
         <PricingCard
           title="AUDIT APTEKA"
           price="$320"
-          icon="../assets/img/laptop.png"
+          icon=""
           :features="[
             'Dori vositalari hisoboti',
             'Ombor boshqaruvi',
