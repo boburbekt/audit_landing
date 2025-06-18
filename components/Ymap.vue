@@ -19,10 +19,9 @@ export default {
     };
   },
  mounted() {
-    setInterval(() => {
-       if (window.ymaps) {
-         clearInterval(interval);
-         window.ymaps.ready(() => {
+    setTimeout(() => {
+      console.log(window.ymaps);
+       if (window) {
            this.map = new ymaps.Map(this.$refs.yandexMaps, {
              center: this.mapCenter,
              zoom: this.zoom,
@@ -35,9 +34,9 @@ export default {
              });
              this.map.geoObjects.add(placemark);
            }
-         });
        }
-     }, 200);
+      
+    }, 200);
    }
  
 

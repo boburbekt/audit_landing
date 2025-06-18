@@ -62,7 +62,8 @@
            <!-- Social Links - First Row -->
            <div class="col-span-2 ">
              <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-left" data-aos-duration="1000">
-               <Ymap/>
+               <div class="w-full h-[400px] max-[400px]:h-[350px] rounded-[20px] max-[500px]:rounded-[10px] overflow-hidden"
+            ref="yandexMap" id="map"></div>
              </div>
            </div>
 
@@ -154,7 +155,9 @@
 
 <script setup>
 import { ref } from 'vue'
-import Ymap from './Ymap.vue'
+import '../ymap'
+
+let map = null
 
 // Form reactive data
 const form = ref({
