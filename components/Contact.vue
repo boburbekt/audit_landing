@@ -59,16 +59,25 @@
              </div>
            </div>
     
-           <!-- Social Links - First Row -->
+           <!-- Map Section -->
            <div class="col-span-2 ">
              <div class="bg-white p-6 rounded-xl shadow-lg" data-aos="fade-left" data-aos-duration="1000">
                <div class="w-full h-[400px] max-[400px]:h-[350px] rounded-[20px] max-[500px]:rounded-[10px] overflow-hidden"
-            ref="yandexMap" id="map"></div>
+                    ref="yandexMap" 
+                    id="map">
+                 <!-- Loading state -->
+                 <div v-if="!mapLoaded" class="flex items-center justify-center h-full bg-gray-100">
+                   <div class="text-center">
+                     <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto mb-2"></div>
+                     <p class="text-gray-600">Xarita yuklanmoqda...</p>
+                   </div>
+                 </div>
+               </div>
              </div>
            </div>
 
          </div>
-         <!-- Contact Form - Second Row -->
+         <!-- Contact Form -->
       <div class="right-con w-[50%]">
         <div class="max-w-4xl mx-auto">
           <div class="bg-white p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-duration="1200">
@@ -121,7 +130,7 @@
               <div>
                 <textarea
                   v-model="form.message"
-                  placeholder="Talab yoki taklifingiz bo‘lsa bu yerda qoldirishingiz mumkin"
+                  placeholder="Talab yoki taklifingiz bo'lsa bu yerda qoldirishingiz mumkin"
                   required
                   rows="4"
                   class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-300 focus:outline-none focus:border-transparent text-gray-800 placeholder-gray-400 resize-none transition-all duration-200"
@@ -147,16 +156,15 @@
         </div>
       </div>
       </div>
-
-    
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import '../ymap'
+import { ref, onMounted, onUnmounted } from 'vue'
 
+// Map state
+const mapLoaded = ref(false)
 let map = null
 
 // Form reactive data
@@ -168,36 +176,106 @@ const form = ref({
 
 const selectedService = ref('')
 const isSubmitting = ref(false)
-
 const services = ['Apteka', 'Cafe', 'ERP', 'Boshqa']
 
-// Submit form function
+// Yandex Maps composable'dan foydalanish
+// const { createMap, isLoading: mapIsLoading } = useYandexMaps()
+
+// Xaritani initsializatsiya qilish
+const initMap = async () => {
+  try {
+    // Agar process client-side bo'lsa
+    if (process.client) {
+      // Yandex Maps API ni dinamik yuklash
+      const ymaps = await new Promise((resolve, reject) => {
+        if (window.ymaps) {
+          resolve(window.ymaps)
+          return
+        }
+
+        const script = document.createElement('script')
+        script.src = 'https://api-maps.yandex.ru/2.1/?apikey=YOUR_API_KEY&lang=uz_UZ'
+        script.async = true
+        
+        script.onload = () => resolve(window.ymaps)
+        script.onerror = () => reject(new Error('Yandex Maps API yuklanmadi'))
+        
+        document.head.appendChild(script)
+      })
+      
+      ymaps.ready(() => {
+        map = new ymaps.Map('map', {
+          center: [ 40.396581, 71.779680],
+          zoom: 17
+        }, {
+          searchControlProvider: 'yandex#search'
+        })
+
+        const placemark = new ymaps.Placemark([40.396581, 71.779680], {
+          balloonContent: 'Aud-IT Soft<br>Farg\'ona shahar, Vatan ravnaqi, 47-uy'
+        }, {
+          preset: 'islands#blueIcon'
+        })
+
+        map.geoObjects.add(placemark)
+
+        // Hover effektlari
+        placemark.events
+          .add('mouseenter', function (e) {
+            e.get('target').options.set('preset', 'islands#redIcon')
+          })
+          .add('mouseleave', function (e) {
+            e.get('target').options.set('preset', 'islands#blueIcon')
+          })
+
+        mapLoaded.value = true
+      })
+    }
+  } catch (error) {
+    console.error('Xarita yuklashda xatolik:', error)
+    mapLoaded.value = false
+  }
+}
+
+// Form yuborish
 const submitForm = async () => {
   isSubmitting.value = true
   
   try {
-    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 1000))
     
-    console.log('Form submitted:', {
+    console.log('Form yuborildi:', {
       ...form.value,
       service: selectedService.value
     })
     
-    // Reset form
+    // Formani tozalash
     form.value = { name: '', email: '', message: '' }
     selectedService.value = ''
     
-    // Show success message
     alert('Xabaringiz muvaffaqiyatli yuborildi!')
     
   } catch (error) {
-    console.error('Error submitting form:', error)
+    console.error('Form yuborishda xatolik:', error)
     alert('Xatolik yuz berdi, iltimos qaytadan urinib ko\'ring.')
   } finally {
     isSubmitting.value = false
   }
 }
+
+// Component lifecycle
+onMounted(() => {
+  // Xaritani yuklash
+  initMap()
+})
+
+onUnmounted(() => {
+  // Map obyektini tozalash
+  if (map) {
+    map.destroy()
+    map = null
+  }
+})
 </script>
 
 <style scoped>
