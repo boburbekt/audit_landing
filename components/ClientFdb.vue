@@ -53,11 +53,11 @@
 
               <div class="relative z-10">
                 <!-- Company header with enhanced animation -->
-                <div class="flex items-center fade-in-up">
-                  <div class="text-6xl mr-6 w-[30%] flex align-center justify-center">
+                <div class="flex items-center fade-in-up flex-wrap">
+                  <div class="text-6xl mr-6 w-[30%] flex align-center justify-center img-content mx-auto">
                     <img width="250" height="250" :src="testimonials[activeIndex].logo" alt="">
                   </div>
-                  <div class="w-[60%]">
+                  <div class="w-[60%] text-content mx-auto">
                     <h3 class="text-2xl font-bold text-gray-800 mb-2">
                       {{ testimonials[activeIndex].company }}
                     </h3>
@@ -370,5 +370,13 @@ onUnmounted(() => {
 /* Smooth transitions */
 button {
   transition: all 0.3s ease;
+}
+@media (max-width: 800px) {
+  .img-content{
+    width: 80%;
+  }
+  .text-content{
+    width: 100%;
+  }
 }
 </style>
