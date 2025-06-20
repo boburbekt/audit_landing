@@ -66,12 +66,14 @@
                     ref="yandexMap" 
                     id="map">
                  <!-- Loading state -->
-                 <div v-if="!mapLoaded" class="flex items-center justify-center h-full bg-gray-100">
+                 <div v-show="!mapLoaded" v-if="false" class="flex items-center justify-center h-full bg-gray-100">
                    <div class="text-center">
                      <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-teal-600 mx-auto mb-2"></div>
                      <p class="text-gray-600">Xarita yuklanmoqda...</p>
                    </div>
                  </div>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d138.22860317953135!2d71.77964081551892!3d40.396521305494204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f100!3m3!1m2!1s0x38bb83505162533b%3A0x11979c7d9a5d5130!2sAUD-IT%20SOFT!5e1!3m2!1sru!2s!4v1750411321438!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                </div>
              </div>
            </div>
