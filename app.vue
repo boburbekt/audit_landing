@@ -1,5 +1,5 @@
 <template>
-  <div class="font-sans text-gray-800 scroll-smooth">
+  <div class="font-sans text-gray-800 scroll-smooth" style="overflow: hidden !important;">
     <Header />
      <router-view />
    

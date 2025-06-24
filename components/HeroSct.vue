@@ -83,8 +83,8 @@
         </div>
 
         <!-- O'ng tomon - Rasm va animatsiya -->
-        <div class="relative lg:h-96" data-aos="fade-up-left">
-          <div class="relative w-full h-80 lg:h-96 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-700 group">
+        <div class="relative h-62 sm:h-96" data-aos="fade-up-left">
+          <div class="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl transform hover:scale-105 transition-transform duration-700 group">
             
             <!-- Zamonaviy korxona avtomatlashtirish rasmi -->
             <div class="absolute inset-0 bg-gradient-to-br from-blue-600/90 via-green-600/80 to-emerald-600/90">

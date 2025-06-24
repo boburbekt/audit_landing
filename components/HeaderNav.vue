@@ -259,6 +259,7 @@
         'md:hidden fixed top-0 right-0 h-[100vh] w-72 max-w-[85vw] bg-white backdrop-blur-lg shadow-2xl transform transition-transform duration-300 ease-out z-50 overflow-hidden',
         isMobileMenuOpen ? 'translate-x-0' : 'translate-x-[100%]'
       ]"
+      style="overflow: hidden;"
     >
       <!-- Mobile Menu Header -->
       <div class="flex items-center justify-between p-4 border-b border-gray-100">
