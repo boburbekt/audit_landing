@@ -134,7 +134,6 @@
                   v-model="form.message"
                   placeholder="Talab yoki taklifingiz bo'lsa bu yerda qoldirishingiz mumkin"
                   required
-                  rows="4"
                   class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:ring-2 focus:ring-teal-300 focus:outline-none focus:border-transparent text-gray-800 placeholder-gray-400 resize-none transition-all duration-200"
                 ></textarea>
               </div>

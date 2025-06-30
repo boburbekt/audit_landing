@@ -148,7 +148,7 @@
 
       <!-- Instructions -->
       <div class="text-center mt-8 text-gray-600 text-sm">
-        <p>← → klavishalar bilan boshqaring | Space tugmasi bilan to'xtatish/davom ettirish</p>
+        <p>← → klavishalar bilan boshqaring</p>
       </div>
     </div>
   </div>
@@ -279,7 +279,6 @@ const handleKeyPress = (e) => {
   if (e.key === 'ArrowLeft') prev()
   if (e.key === 'ArrowRight') next()
   if (e.key === ' ') {
-    e.preventDefault()
     toggleAutoplay()
   }
 }

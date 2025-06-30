@@ -41,8 +41,9 @@
 
       <!-- Desktop Navigation -->
       <div class="flex md-hidden items-center space-x-8">
-        <!-- Asosiy menyu -->
+        <!-- Asosiy menyu - only show on home page -->
         <a 
+          v-if="!isProductsPage"
           href="#hero"
           @click="setActive('hero')"
           :class="[
@@ -77,8 +78,9 @@
           ></span>
         </a>
 
-        <!-- Xizmatlar menyu -->
+        <!-- Xizmatlar menyu - only show on home page -->
         <a 
+          v-if="!isProductsPage"
           href="#xizmatlar" 
           @click="setActive('xizmatlar')"
           :class="[
@@ -113,8 +115,9 @@
           ></span>
         </a>
         
-        <!-- Loyihalar menyu -->
+        <!-- Loyihalar menyu - only show on home page -->
         <a 
+          v-if="!isProductsPage"
           href="#loyihalar" 
           @click="setActive('loyihalar')"
           :class="[
@@ -149,8 +152,9 @@
           ></span>
         </a>
         
-        <!-- Narxlar menyu -->
+        <!-- Narxlar menyu - only show on home page -->
         <a 
+          v-if="!isProductsPage"
           href="#tolovlar" 
           @click="setActive('tolovlar')"
           :class="[
@@ -185,8 +189,9 @@
           ></span>
         </a>
         
-        <!-- Aloqa menyu -->
+        <!-- Aloqa menyu - only show on home page -->
         <a 
+          v-if="!isProductsPage"
           href="#aloqa" 
           @click="setActive('aloqa')"
           :class="[
@@ -279,6 +284,7 @@
       <!-- Mobile Menu Items -->
       <div class="p-4 space-y-2 bg-white">
         <a 
+          v-if="!isProductsPage"
           href="#hero"
           @click="setActiveAndClose('hero')"
           :class="[
@@ -291,6 +297,7 @@
         </a>
 
         <a 
+          v-if="!isProductsPage"
           href="#xizmatlar"
           @click="setActiveAndClose('xizmatlar')"
           :class="[
@@ -303,6 +310,7 @@
         </a>
 
         <a 
+          v-if="!isProductsPage"
           href="#loyihalar"
           @click="setActiveAndClose('loyihalar')"
           :class="[
@@ -315,6 +323,7 @@
         </a>
 
         <a 
+          v-if="!isProductsPage"
           href="#tolovlar"
           @click="setActiveAndClose('tolovlar')"
           :class="[
@@ -327,6 +336,7 @@
         </a>
 
         <a 
+          v-if="!isProductsPage"
           href="#aloqa"
           @click="setActiveAndClose('aloqa')"
           :class="[
@@ -415,15 +425,22 @@
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { useRoute } from 'vue-router'
 import Modal from '~/components/Modal.vue'
 
+const route = useRoute()
 const isScrolled = ref(false)
 const isMobileMenuOpen = ref(false)
 const modal = ref(null)
 const username = ref('')
 const password = ref('')
 const activeSection = ref('')
+
+// Check if current route is products page
+const isProductsPage = computed(() => {
+  return route.path === '/products' || route.name === 'products'
+})
 
 const handleSubmit = () => {
   console.log('Login attempt:', {
